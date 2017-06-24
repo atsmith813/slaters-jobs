@@ -1,4 +1,19 @@
-<div class="container">
+
+<h1 align="center">Listing all <%= pluralize(@feed.jobs.count, "job") if @feed.jobs %>
+</h1>
+</div>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort By:
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu center" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Published Date</a></li>
+    <li><a href="#">Job Title</a></li>
+    <li><a href="#">Department</a></li>
+  </ul>
+</div>
+<div class="row">
 	<% @jobs.each do |job| %>
 		<div class="panel panel-default">
 			<div class ="panel-body">
@@ -6,4 +21,7 @@
 			</div>
 		</div>
 	<% end %>
+</div>
+<div align="center">
+	<%= will_paginate%>
 </div>

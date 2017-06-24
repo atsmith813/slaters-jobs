@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 	before_action :set_feed, only: :index
 
 	def index
-		@jobs = @feed.jobs
+		@jobs = @feed.jobs.paginate(page: params[:page], per_page: 10)
 	end
 
 	def show
