@@ -17,7 +17,12 @@
 	<% @jobs.each do |job| %>
 		<div class="panel panel-default">
 			<div class ="panel-body">
-				<%= link_to job.title, job %> - <i> published <%= time_ago_in_words(job.published) %> ago. </i>
+				<%= link_to job.title, job %>
+        <p>
+          <%= truncate(job.content, length: 450) %>
+          <br>
+          <i><small>Published <%= time_ago_in_words(job.published) %> ago. </i></small>
+        </p>
 			</div>
 		</div>
 	<% end %>

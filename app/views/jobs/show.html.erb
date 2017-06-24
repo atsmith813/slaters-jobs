@@ -1,7 +1,12 @@
 <div class="container">
 	<h3><%= link_to @job.title, @job.url %></h3>
-	<i>published on <%= @job.published %> by <%= @job.author %></i>
+	<h5><%= @job.author %></h5>
+	<i><small>Published on <%= @job.published.strftime("%B %d, %Y") %></i></small>
 	<p>
 		<%= @job.content.html_safe %>
 	</p>
 </div>
+
+<div class="job actions">
+	<%= link_to "Back to jobs", root_path, class: "btn btn-xs btn-success" %>
+</div>	
