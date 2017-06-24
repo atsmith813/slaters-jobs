@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root 'feeds#index'
+	
+	root 'jobs#index'
 
-  resources :feeds
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+	resources :feeds do
+		member do
+			resources :jobs, only: [:index, :show]
+		end
+	end
 end

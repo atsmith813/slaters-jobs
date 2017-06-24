@@ -1,0 +1,7 @@
+<div class="container">
+	<h3><%= link_to @job.title, @job.url %></h3>
+	<i>published on <%= @job.published %> by <%= @job.author %></i>
+	<p>
+		<%= @job.content.html_safe %>
+	</p>
+</div>
