@@ -8,25 +8,27 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu center" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Published Date</a></li>
-    <li><a href="#">Job Title</a></li>
-    <li><a href="#">Department</a></li>
+    <li><%= link_to "Published Date", jobs_path(1, :order_param => 'published') %></li>
+    <li><%= link_to "Job Title", jobs_path(1, :order_param => 'title') %></li>
+    <li><%= link_to "Department",jobs_path(1, :order_param => 'department') %></li>
   </ul>
 </div>
-<div class="row">
-	<% @jobs.each do |job| %>
-		<div class="panel panel-default">
-			<div class ="panel-body">
-				<big><%= link_to job.title, job %></big>
-        <br>
-        <br>
-        <%= truncate(job.content, length: 450) %>
-        <br>
-        <br>
-        <i><small>Published <%= time_ago_in_words(job.published) %> ago. </i></small>
-			</div>
-		</div>
-	<% end %>
+<div id="jobs">
+  <div class="row">
+  	<% @jobs.each do |job| %>
+  		<div class="panel panel-default">
+  			<div class ="panel-body">
+  				<big><%= link_to job.title, job %></big>
+          <br>
+          <br>
+          <%= truncate(job.content, length: 450) %>
+          <br>
+          <br>
+          <i><small>Published <%= time_ago_in_words(job.published) %> ago. </i></small>
+  			</div>
+  		</div>
+  	<% end %>
+  </div>
 </div>
 <div align="center">
 	<%= will_paginate%>
