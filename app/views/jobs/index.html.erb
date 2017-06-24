@@ -20,6 +20,8 @@
   			<div class ="panel-body">
   				<big><%= link_to job.title, job %></big>
           <br>
+          <small>Posted by <%= job.author %></small>
+          <br>
           <br>
           <%= truncate(job.content, length: 450) %>
           <br>
