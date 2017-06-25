@@ -6,9 +6,9 @@ class JobsController < ApplicationController
 	def index
 		order_param = params[:order_param]
 		case order_param
-		when 'title'
+		when 'job title'
 			@jobs = @feed.jobs.order(title: :asc).paginate(page: params[:page], per_page: 10)
-		when 'published'
+		when 'published date'
 			@jobs = @feed.jobs.order(published: :desc).paginate(page: params[:page], per_page: 10)
 		when 'department'
 			@jobs = @feed.jobs.order(author: :asc).paginate(page: params[:page], per_page: 10)

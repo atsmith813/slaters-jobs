@@ -7,9 +7,12 @@
     Sort By:
     <span class="caret"></span>
   </button>
+  <% if params[:order_param] %>
+    <strong>Currently sorted by: <%= params[:order_param].capitalize %></strong>
+  <% end %>
   <ul class="dropdown-menu center" aria-labelledby="dropdownMenu1">
-    <li><%= link_to "Published Date", jobs_path(1, :order_param => 'published') %></li>
-    <li><%= link_to "Job Title", jobs_path(1, :order_param => 'title') %></li>
+    <li><%= link_to "Published date", jobs_path(1, :order_param => 'published date') %></li>
+    <li><%= link_to "Job title", jobs_path(1, :order_param => 'job title') %></li>
     <li><%= link_to "Department",jobs_path(1, :order_param => 'department') %></li>
   </ul>
 </div>
