@@ -4,12 +4,12 @@
 </div>
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Sort By:
+    Sort By: 
+      <% if params[:order_param].present? %> 
+        <strong><%= params[:order_param].capitalize %></strong>
+      <% end %>
     <span class="caret"></span>
   </button>
-  <% if params[:order_param] %>
-    <strong>Currently sorted by: <%= params[:order_param].capitalize %></strong>
-  <% end %>
   <ul class="dropdown-menu center" aria-labelledby="dropdownMenu1">
     <li><%= link_to "Published date", jobs_path(1, :order_param => 'published date') %></li>
     <li><%= link_to "Job title", jobs_path(1, :order_param => 'job title') %></li>
