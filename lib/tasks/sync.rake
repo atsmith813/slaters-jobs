@@ -1,3 +1,4 @@
+# This updates the tables by scraping the URLs included in Feeds to populate postings into Jobs
 namespace :sync do
 	task feeds: [:environment] do
 		Feed.all.each do |feed|

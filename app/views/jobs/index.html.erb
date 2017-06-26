@@ -4,12 +4,15 @@
 </div>
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Sort By: 
+    Sort By:
+      <!-- This condition is used to display what the user is currently sorted by --> 
       <% if params[:order_param].present? %> 
         <strong><%= params[:order_param].capitalize %></strong>
       <% end %>
     <span class="caret"></span>
   </button>
+  <!-- Shows available options to sort and sends selection to params so the controller can change the sort order -->
+  <!-- Using 1 for jobs_path to hardcode directly to OSU feed -->
   <ul class="dropdown-menu center" aria-labelledby="dropdownMenu1">
     <li><%= link_to "Published date", jobs_path(1, :order_param => 'published date') %></li>
     <li><%= link_to "Job title", jobs_path(1, :order_param => 'job title') %></li>

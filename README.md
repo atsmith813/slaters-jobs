@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Tsunami Jobs, where we're making waves for OSU Job Opportunities!
 
-Things you may want to cover:
+This project is a simple job board that uses an ATOM feed of available jobs at OSU. I was just getting my feet wet and introducing myself to concepts/gems/ideas such as:
 
-* Ruby version
+* Sorting
 
-* System dependencies
+* Whenever
 
-* Configuration
+* Feedjira
 
-* Database creation
+* Cron jobs
 
-* Database initialization
+* Heroku deployment
 
-* How to run the test suite
+* Git
 
-* Services (job queues, cache servers, search engines, etc.)
+* And more!
 
-* Deployment instructions
 
-* ...
+P.S.
+I'm very new to all of this.
