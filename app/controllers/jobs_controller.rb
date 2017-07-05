@@ -31,8 +31,5 @@ class JobsController < ApplicationController
 	def load_order
 		params[:order_param] ||= session[:order_param]
 		session[:order_param] = params[:order_param]
-		if params[:order_param]
-			order_param = params[:order_param]
-		end
 	end
 end
