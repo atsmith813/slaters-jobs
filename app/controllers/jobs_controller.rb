@@ -19,10 +19,20 @@ class JobsController < ApplicationController
 		if params[:author].present?
 			@jobs = @jobs.where author: params[:author]
 		end
+
+		@visited_jobs = JSON.parse cookies[:visited_jobs]
 	end
 
 	def show
+		visited_jobs = cookies[:visited_jobs].blank? ? "[]" : cookies[:visited_jobs]
+		visited_jobs = JSON.parse(visited_jobs)
+		
 		@job = Job.find(params[:id])
+		unless visited_jobs.include? @job.id.to_s
+			visited_jobs << @job.id
+			cookies[:visited_jobs] = visited_jobs.to_json
+		end
+		# cookies[:visited_jobs] = [1, 2, 3]
 	end
 
 	private
