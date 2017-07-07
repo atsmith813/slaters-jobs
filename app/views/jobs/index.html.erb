@@ -28,11 +28,10 @@
   	<% @jobs.each do |job| %>
   		<div class="panel panel-default">
       <% if @visited_jobs.include? job.id %>
-        <div class ="panel-body" style = "background-color: blue;">
+        <div class="panel-body" style="background-color: #ffffcc;">
       <% else %>
-        <div class ="panel-body">
+        <div class="panel-body">
       <% end %>
-
   				<big><%= link_to job.title, job %></big>
           <br>
           <small>Posted by <%= link_to job.author, jobs_path(1, author: job.author) %></small>
