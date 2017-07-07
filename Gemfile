@@ -19,6 +19,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'whenever'
+gem 'pry-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
