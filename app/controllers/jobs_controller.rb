@@ -15,6 +15,10 @@ class JobsController < ApplicationController
 		else
 			@jobs = @feed.jobs.paginate(page: params[:page], per_page: 10)
 		end
+
+		if params[:author].present?
+			@jobs = @jobs.where author: params[:author]
+		end
 	end
 
 	def show

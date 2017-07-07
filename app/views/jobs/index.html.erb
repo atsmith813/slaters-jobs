@@ -1,5 +1,9 @@
 
-<h1 align="center">Listing all <%= pluralize(@feed.jobs.count, "job") if @feed.jobs %>
+<h1 align="center">
+  Listing all <%= pluralize(@jobs.count, "job") if @jobs %>
+  <% if params[:author].present? %>
+    for <%= params[:author] %>
+  <% end %>
 </h1>
 </div>
 <div class="dropdown">
@@ -26,7 +30,7 @@
   			<div class ="panel-body">
   				<big><%= link_to job.title, job %></big>
           <br>
-          <small>Posted by <%= job.author %></small>
+          <small>Posted by <%= link_to job.author, jobs_path(1, author: job.author) %></small>
           <br>
           <br>
           <%= truncate(job.content, length: 450) %>
