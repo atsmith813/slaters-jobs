@@ -18,9 +18,9 @@
   <!-- Shows available options to sort and sends selection to params so the controller can change the sort order -->
   <!-- Using 1 for jobs_path to hardcode directly to OSU feed -->
   <ul class="dropdown-menu center" aria-labelledby="dropdownMenu1">
-    <li><%= link_to "Published date", jobs_path(1, :order_param => 'published date') %></li>
-    <li><%= link_to "Job title", jobs_path(1, :order_param => 'job title') %></li>
-    <li><%= link_to "Department",jobs_path(1, :order_param => 'department') %></li>
+    <li><%= link_to "Published date", jobs_path(1, order_param: 'published date') %></li>
+    <li><%= link_to "Job title", jobs_path(1, order_param: 'job title') %></li>
+    <li><%= link_to "Department",jobs_path(1, order_param: 'department') %></li>
   </ul>
 </div>
 <div id="jobs">
